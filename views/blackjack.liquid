@@ -1,0 +1,23 @@
+{% layout "game.liquid" %}
+
+{% assign name = 'BlackJack' %}
+{% assign gameType = 'blackjack' %}
+
+{% capture game-parts %}
+  <div class="text-center">
+    <canvas id="screen" class="canvas"></canvas>
+  </div>
+  <div class="row text-center">
+    <div class="col-sm">
+      <button id="hit" type="button" class="btn btn-primary btn-lg btn-block">Hit</button>
+    </div>
+    <div class="col-sm">
+      <button id="stand" type="button" class="btn btn-primary btn-lg btn-block">Wait</button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% block page_js %}
+<script src="js/common.js"></script>
+<script src="js/blackjack.js"></script>
+{% endblock %}

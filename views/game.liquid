@@ -1,0 +1,88 @@
+{% layout "default.liquid" %}
+
+{% block main %}
+  <div id="enter-game-type" hidden>{{- gameType -}}</div>
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">
+              Choose your nickname
+          </h5>
+        </div>
+        <div class="modal-body">
+          <form id="enter-table-form" class="form-enter-table text-left">
+            <div class="form-group">
+              <label for="enter-player-name">
+                Nickname:
+              </label>
+              <input id="enter-player-name" maxlength="10" class="form-control" required autofocus>
+            </div>
+            <div class="form-group">
+              <label for="enter-table-id">
+                Table:
+              </label>
+              <input id="enter-table-id" maxlength="10"  class="form-control">
+            </div>
+            <div class="form-group  form-check" >
+              <input id="enter-table-observer"  type='checkbox' class="form-check-input">
+              <label for="enter-table-observer" class="form-check-label">
+                Observer
+              </label>
+            </div>
+            <p id='enter-table-error-message' class=" text-muted"> </p>
+           </form>
+        </div>
+        <div class="modal-footer">
+          <button id="enter" form="enter-table-form" class="btn btn-lg btn-primary btn-block" type="submit">
+              Enter Table
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="game-box" class="container my-1">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <button id="start" class="btn btn-primary">Start</button>
+          </li>
+          <li class="nav-item">
+            <button id="clear" class="btn btn-secondary">Restart</button>
+          </li>
+          <li class="nav-item">
+            <a href="/" type="button" class="btn btn-secondary mx-2">Exit</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-body">
+        <div style="position: absolute; top: 10; right: 0;">
+          <div class="toast m-1" id="notification" role="alert" aria-live="assertive" aria-atomic="true" data-delay="10000">
+            <div class="toast-body">
+              <strong class="mr-auto" id="notificationText">Welcome</strong>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="game-parts" class="card-body">
+        {{game-parts}}
+      </div>
+
+      <div class="card-body">
+        <div id="players">
+
+        </div>
+        <div id="messages-window">
+          <div id="messages"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

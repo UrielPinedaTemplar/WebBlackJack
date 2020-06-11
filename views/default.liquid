@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+
+        <title>BlackJack {% if name %}· {{name}} {% endif %}</title>
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles -->
+        <link href="css/main.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <div class="navbar navbar-light bg-light shadow-sm">
+                <div class="container d-flex justify-content-between">
+                    <a href="/" class="navbar-brand d-flex align-items-center">
+                        <strong>BlackJack</strong>
+                    </a>
+                    </div>
+            </div>
+        </header>
+        <main role="main">
+        {% block main %}
+        {% endblock %}
+        </main>
+        <script src="js/lib/socket.io.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/lib/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/lib/bootstrap.js"></script>
+        {% block page_js %}{% endblock %}
+    </body>
+</html>
