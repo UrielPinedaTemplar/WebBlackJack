@@ -20,6 +20,5 @@ npm run startd
 Then,
 
 
-Go to [localhost:8080](http://localhost:808
-0).
+Go to [localhost:8080](http://localhost:8080).
 
